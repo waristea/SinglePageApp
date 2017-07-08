@@ -34,7 +34,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'flashCardApp.urls'
+ROOT_URLCONF = 'codeShareApp.urls'
 
 TEMPLATES = [
     {
@@ -52,7 +52,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'flashCardApp.wsgi.application'
+WSGI_APPLICATION = 'codeShareApp.wsgi.application'
 
 ####
 #DATABASE
