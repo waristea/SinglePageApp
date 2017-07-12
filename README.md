@@ -1,5 +1,5 @@
 # CodeShareApp
-is an single page app that allows its user to manage code snippets.
+is a single page app that allows its user to manage code snippets.
 User can edit, share, and save their code snippets with this Web SPA.
 
 Tools used : 
@@ -12,14 +12,14 @@ Tools used :
 - [x] ReactJS
 - [x] Others (virtualenv, npm, webpack, dll)
 ### B. Design
-- [ ] Model design
-- [ ] API design
+- [x] Model design
+- [x] API design
 - [ ] View design
 - [ ] JS design
 - [ ] Look design
 ### C. Implementation
-- [ ] Model implementation
-- [ ] API implementation
+- [x] Model implementation
+- [x] API implementation
 - [ ] View implementation
 - [ ] JS implementation
 - [ ] Look implementation
