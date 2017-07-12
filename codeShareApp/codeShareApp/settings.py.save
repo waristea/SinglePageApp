@@ -39,7 +39,8 @@ INSTALLED_APPS = (
     #third party apps
     'rest_framework',
     #local apps
-    'api',
+    'snippets',
+    'users',
 )
 
 MIDDLEWARE_CLASSES = (
