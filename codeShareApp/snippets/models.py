@@ -10,7 +10,7 @@ STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 
 class Snippet(models.Model):
-    id = models.IntegerField(primary_key=True, default=random(5))
+    id = models.IntegerField(primary_key=True)
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, default='My Code')
     code = models.TextField()
@@ -18,7 +18,7 @@ class Snippet(models.Model):
     language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
     style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
     is_private = models.BooleanField(default=False)
-    snippet_password = models.CharField(min_length=5, max_length=10, blank=True)  #might be changed to django password handler
+    #snippet_password = models.CharField(min_length=5, max_length=10, blank=True)  #might be changed to django password handler
 
     #admin = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     #contributor = models.OneToManyField(User)

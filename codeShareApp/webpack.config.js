@@ -14,7 +14,7 @@ module.exports = {
         //where you want your compiled bundle to be stored
         path: path.resolve('./assets/bundles/'), 
         //naming convention webpack should use for your files
-        filename: '[name]-[hash].js', 
+        filename: '[name].js',
     },
     
     plugins: [

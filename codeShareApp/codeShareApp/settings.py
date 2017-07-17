@@ -8,7 +8,6 @@ DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 
 ALLOWED_HOSTS = []
 
-
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,10 +54,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'codeShareApp.wsgi.application'
 
-####
-#DATABASE
-####
-
+#Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -66,34 +62,28 @@ DATABASES = {
     }
 }
 
-####
-#INTERNATIONALIZATION
-####
-
+#Internationalization
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
-####
-#STATIC FILES
-####
-
-STATIC_URL = '/static/'
+#Static Files
+STATIC_URL = '/assets/'
 
 STATICFILES_DIRS = (
 	os.path.join(BASE_DIR, 'assets'),
 )
 
-####
-#WEBPACK
-####
+#Codemirror Settings
+CODEMIRROR_PATH = os.path.join(BASE_DIR, 'assets','codemirror'),
+#CODEMIRROR_MODE = 'javascript'
+#CODEMIRROR_THEME = 'default'
+#CODEMIRROR_CONFIG = 'default'
+#CODEMIRROR_JS_VAR_FORMAT = {'lineNumbers':True}
 
+#Webpack
 WEBPACK_LOADER = {
 	'DEFAULT': {
 	'BUNDLE_DIR_NAME': 'bundles/',
