@@ -1,11 +1,13 @@
 {% load render_bundle from webpack_loader %}
-<!DOCTYPE html>
+<!--{% load static from staticfiles %}-->
 <html>
     <head>
         <title>Hello React</title>
     </head>
     <body>
-        <div id="container"></div>
+    <h1>Hi</h1>
+        <div id="container" data-name="{{snippet.title}}"></div>
+        <!--<script src="{% static 'bundles/main.js' %}" />-->
         {% render_bundle 'main' %}
     </body>
 </html>

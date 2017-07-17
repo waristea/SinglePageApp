@@ -16,6 +16,16 @@ class SnippetList(generics.ListCreateAPIView):
     serializer_class = SnippetSerializer
 
 @csrf_exempt
+def snippet_new(request):
+    snippet = Snippet.make_snippet('Untitled', 'Testing\n1\n2\n3')
+    serializer = SnippetSerializer(snippet)
+    json_data = JSONRenderer().render(serializer.data)
+    context = {
+        'json_data': json_data,
+    }
+    return render(request, 'index.html', context)
+
+@csrf_exempt
 def snippet_list(request):
     """
     List all code snippets, or create a new snippet.
