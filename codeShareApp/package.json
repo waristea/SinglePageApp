@@ -4,7 +4,8 @@
   "description": "Django and React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config webpack.config.js",
+    "dev": "webpack-dev-server"
   },
   "keywords": [
     "django",
@@ -21,6 +22,7 @@
     "jquery": "^3.2.1",
     "react": "^0.14.9",
     "react-dom": "^0.14.9",
+    "style-loader": "^0.18.2",
     "webpack": "^1.15.0",
     "webpack-bundle-tracker": "0.0.93"
   },
@@ -30,13 +32,10 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "jquery": "^3.2.1",
-    "react": "^0.14.9",
-    "react-dom": "^0.14.9",
+    "react": "^15.6.1",
+    "react-codemirror": "^1.0.0",
+    "react-dom": "^15.5.4",
     "webpack": "^1.15.0",
     "webpack-bundle-tracker": "^0.0.93"
-  },
-  "scripts": {
-	  "build": "webpack --config webpack.config.js",
-	  "dev": "webpack-dev-server"
-	}
+  }
 }

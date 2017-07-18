@@ -37,14 +37,17 @@ module.exports = {
             {test: /\.jsx?$/, 
                 //we definitely don't want babel to transpile all the files in 
                 //node_modules. That would take a long time.
-                exclude: /node_modules/, 
+                exclude: /node_modules/,
                 //use the babel loader 
                 loader: 'babel-loader', 
                 query: {
                     //specify that we will be dealing with React code
                     presets: ['react'] 
                 }
-            }
+            },
+            { test: /\.css$/, 
+				loader: "style-loader!css-loader" 
+			}
         ]
     },
     
@@ -52,6 +55,6 @@ module.exports = {
         //tells webpack where to look for modules
         modulesDirectories: ['node_modules'],
         //extensions that should be used to resolve modules
-        extensions: ['', '.js', '.jsx'] 
+        extensions: ['', '.js', '.jsx','.css'] 
     }   
 }
