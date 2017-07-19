@@ -65,8 +65,11 @@
 		displayName: 'App',
 
 		getInitialState() {
+			var json = JSON.parse(this.props.jsonstring);;
 			return {
-				code: defaults.markdown,
+				//code: defaults.markdown,
+				//code: this.props.jsonstring,
+				code: json.code,
 				readOnly: false,
 				mode: 'markdown'
 			};
@@ -89,6 +92,7 @@
 			}, () => this.refs.editor.focus());
 		},
 		render() {
+			var json = JSON.parse(this.props.jsonstring);;
 			var options = {
 				lineNumbers: true,
 				readOnly: this.state.readOnly,
@@ -97,6 +101,11 @@
 			return React.createElement(
 				'div',
 				null,
+				React.createElement(
+					'h1',
+					null,
+					json.code
+				),
 				React.createElement(Codemirror, { ref: 'editor', value: this.state.code, onChange: this.updateCode, options: options, autoFocus: true }),
 				React.createElement(
 					'div',
@@ -128,7 +137,7 @@
 
 	});
 
-	ReactDOM.render(React.createElement(App, null), root);
+	ReactDOM.render(React.createElement(App, { jsonstring: root.getAttribute('data-json-string') }), root);
 
 /***/ }),
 /* 1 */

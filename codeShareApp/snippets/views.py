@@ -7,24 +7,14 @@ from rest_framework.parsers import JSONParser
 from rest_framework import generics
 from .models import Snippet
 from .serializers import SnippetSerializer
+from rest_framework.renderers import JSONRenderer
 
+# View contoh berupa snippet_list dan penambahan snippet baru (tidak dipakai)
 class SnippetList(generics.ListCreateAPIView):
-    """
-    API endpoint for listing and creating Book objects
-    """
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
 
-@csrf_exempt
-def snippet_new(request):
-    snippet = Snippet.make_snippet('Untitled', 'Testing\n1\n2\n3')
-    serializer = SnippetSerializer(snippet)
-    json_data = JSONRenderer().render(serializer.data)
-    context = {
-        'json_data': json_data,
-    }
-    return render(request, 'index.html', context)
-
+# Daftar snippet (tidak dipakai)
 @csrf_exempt
 def snippet_list(request):
     """
@@ -43,11 +33,21 @@ def snippet_list(request):
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
 
+# Mengeluarkan snippet baru
+def snippet_new(request):
+    snippet = Snippet.objects.get(pk=1)
+    serializer = SnippetSerializer(snippet)
+    json_data = JSONRenderer().render(serializer.data)
+    context = {
+        'snippet' : snippet,
+        'serializer' : serializer,
+        'json_data' : json_data
+    }
+    return render(request, 'index.html', context)
+
+# Untuk menyimpan, mengupdate, dan menghapus snippet
 @csrf_exempt
 def snippet_detail(request, pk):
-    """
-    Retrieve, update or delete a code snippet.
-    """
     try:
         snippet = Snippet.objects.get(pk=pk)
     except Snippet.DoesNotExist:

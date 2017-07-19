@@ -17,8 +17,9 @@ var defaults = {
 
 var App = createReactClass({
 	getInitialState () {
+		var json = JSON.parse(this.props.jsonstring);;
 		return {
-			code: defaults.markdown,
+			code: json.code,
 			readOnly: false,
 			mode: 'markdown',
 		};
@@ -48,7 +49,7 @@ var App = createReactClass({
 		};
 		return(
             <div>
-				<Codemirror ref="editor" value={this.state.code} onChange={this.updateCode} options={options} autoFocus={true} />
+                <Codemirror ref="editor" value={this.state.code} onChange={this.updateCode} options={options} autoFocus={true} />
 				<div style={{ marginTop: 10 }}>
 					<select onChange={this.changeMode} value={this.state.mode}>
 						<option value="markdown">Markdown</option>
@@ -63,4 +64,4 @@ var App = createReactClass({
 
 });
 
-ReactDOM.render(<App />, root);
+ReactDOM.render(<App jsonstring ={root.getAttribute('data-json-string')}/>, root);
