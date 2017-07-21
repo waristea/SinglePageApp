@@ -46529,7 +46529,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var url = 'http://127.0.0.1:8000/snippet/2';
+	var url = 'http://127.0.0.1:8000/snippet/1/';
 
 	var App = function (_React$Component) {
 	    _inherits(App, _React$Component);
@@ -46541,7 +46541,12 @@
 
 	        var jsonObject = JSON.parse(props.jsonstring);
 	        _this.state = {
-	            code: jsonObject.code
+	            id: jsonObject.id, // nanti dihilangkan
+	            title: jsonObject.title,
+	            code: jsonObject.code,
+	            linenos: jsonObject.linenos, // nanti dihilangkan
+	            language: jsonObject.language,
+	            style: jsonObject.style
 	        };
 	        return _this;
 	    }
@@ -46549,20 +46554,50 @@
 	    _createClass(App, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            var _this2 = this;
-
-	            fetch(url).then(function (response) {
-	                return response.json();
-	            }).then(function (parsedData) {
-	                _this2.setState({
-	                    code: parsedData.code
-	                });
-	            });
+	            /*
+	            fetch(url)
+	                .then(response => response.json())
+	                .then(parsedData => {
+	                 this.setState({
+	                     id       : parsedData.id,// nanti dihilangkan
+	                     title    : parsedData.title,
+	                        code     : parsedData.code,
+	                        linenos  : parsedData.linenos,// nanti dihilangkan
+	                        language : parsedData.language,
+	                        style    : parsedData.style
+	                    });
+	             });
+	             */
 	        }
 	    }, {
 	        key: 'onChange',
 	        value: function onChange(newValue) {
+	            this.setState({
+	                code: newValue
+	            });
 	            console.log('change', newValue);
+	        }
+	    }, {
+	        key: 'save',
+	        value: function save() {
+	            console.log('Saving..');
+	            var jsonPut = JSON.stringify({
+	                id: this.state.id,
+	                title: this.state.title,
+	                code: this.state.code,
+	                linenos: this.state.linenos,
+	                language: this.state.language,
+	                style: this.state.style
+	            });
+
+	            fetch(url, {
+	                method: 'PUT',
+	                body: jsonPut
+	            }).then(function (response) {
+	                return response.json().then(function (json) {
+	                    return console.log(json);
+	                });
+	            });
 	        }
 
 	        // Render editor
@@ -46570,14 +46605,23 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(_reactAce2.default, {
-	                value: this.state.code,
-	                mode: 'java',
-	                theme: 'github',
-	                onChange: this.onChange,
-	                name: 'UNIQUE_ID_OF_DIV',
-	                editorProps: { $blockScrolling: true }
-	            });
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'button',
+	                    { onClick: this.save.bind(this) },
+	                    ' Save '
+	                ),
+	                _react2.default.createElement(_reactAce2.default, {
+	                    value: this.state.code,
+	                    mode: 'java',
+	                    theme: 'github',
+	                    onChange: this.onChange.bind(this),
+	                    name: 'UNIQUE_ID_OF_DIV',
+	                    editorProps: { $blockScrolling: true }
+	                })
+	            );
 	        }
 	    }]);
 
