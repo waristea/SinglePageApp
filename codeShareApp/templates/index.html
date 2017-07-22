@@ -5,9 +5,7 @@
         <title>Hello React</title>
     </head>
     <body>
-    <h1>Testing</h1>{{json_data}}
         <div id="container" data-json-string="{{json_data}}"></div>
-        <!--<script src="{% static 'bundles/main.js' %}" />-->
         {% render_bundle 'main' %}
     </body>
 </html>

@@ -9,43 +9,56 @@ from .models import Snippet
 from .serializers import SnippetSerializer
 from rest_framework.renderers import JSONRenderer
 
-# View contoh berupa snippet_list dan penambahan snippet baru (tidak dipakai)
+# Snippet list with add option (for debugging)
 class SnippetList(generics.ListCreateAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
 
-# Daftar snippet (tidak dipakai)
+# Snippet list (for debugging)
 @csrf_exempt
 def snippet_list(request):
-    """
-    List all code snippets, or create a new snippet.
-    """
     if request.method == 'GET':
         snippets = Snippet.objects.all()
         serializer = SnippetSerializer(snippets, many=True)
         return JsonResponse(serializer.data, safe=False)
 
-    elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = SnippetSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
-
-# Mengeluarkan snippet baru
+# /snippet/ - New or default snippet
+@csrf_exempt
 def snippet_new(request):
-    snippet = Snippet.objects.get(pk=1)
+    snippet = Snippet()
+    snippet.save()
     serializer = SnippetSerializer(snippet)
     json_data = JSONRenderer().render(serializer.data)
     context = {
-        'snippet' : snippet,
-        'serializer' : serializer,
         'json_data' : json_data
     }
     return render(request, 'index.html', context)
 
-# Untuk menyimpan, mengupdate, dan menghapus snippet
+# /snippet/api/ - For JSON API
+@csrf_exempt
+def snippet_api(request, pk):
+    try:
+        snippet = Snippet.objects.get(pk=pk)
+    except Snippet.DoesNotExist:
+        response = JsonResponse(
+            {'status' : "failed"},
+            {'message': "Requested snippet doesn't exist"})
+        response.status_code = 500
+        return response
+
+    if request.method == 'GET':
+        serializer = SnippetSerializer(snippet)
+        return JsonResponse(serializer.data)
+
+    elif request.method == 'PUT':
+        data = JSONParser().parse(request)
+        serializer = SnippetSerializer(snippet, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data)
+        return JsonResponse(serializer.errors, status=400)
+
+# /snippet/{pk} - For HTML
 @csrf_exempt
 def snippet_detail(request, pk):
     try:
@@ -55,19 +68,8 @@ def snippet_detail(request, pk):
 
     if request.method == 'GET':
         serializer = SnippetSerializer(snippet)
-        return JsonResponse(serializer.data)
-
-    elif request.method == 'PUT':
-        data = JSONParser().parse(request)
-        print(data)
-        serializer = SnippetSerializer(snippet, data=data)
-        print(serializer)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data)
-        return JsonResponse(serializer.errors, status=400)
-
-    elif request.method == 'DELETE':
-        snippet.delete()
-        return HttpResponse(status=204)
-
+        json_data = JSONRenderer().render(serializer.data)
+        context = {
+            'json_data': json_data
+        }
+        return render(request, 'index.html', context)
