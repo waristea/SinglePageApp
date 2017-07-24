@@ -6,7 +6,7 @@ SECRET_KEY = 'x=ub&fs7scl5(j+iyq50wssv74mocvh)k#d$#q=)os^*m^ju7o'
 
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -19,7 +19,6 @@ INSTALLED_APPS = (
     'rest_framework',
     'webpack_loader',
     #local apps
-    'users',
     'snippets',
 )
 
@@ -75,13 +74,6 @@ STATIC_URL = '/assets/'
 STATICFILES_DIRS = (
 	os.path.join(BASE_DIR, 'assets'),
 )
-
-#Codemirror Settings
-CODEMIRROR_PATH = os.path.join(BASE_DIR, 'assets','codemirror'),
-#CODEMIRROR_MODE = 'javascript'
-#CODEMIRROR_THEME = 'default'
-#CODEMIRROR_CONFIG = 'default'
-#CODEMIRROR_JS_VAR_FORMAT = {'lineNumbers':True}
 
 #Webpack
 WEBPACK_LOADER = {

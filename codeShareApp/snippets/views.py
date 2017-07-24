@@ -2,7 +2,6 @@ from django.shortcuts import render
 
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from rest_framework import generics
 from .models import Snippet
@@ -34,7 +33,7 @@ def snippet_new(request):
     }
     return render(request, 'index.html', context)
 
-# /snippet/api/ - For JSON API
+# /snippet/api/{pk} - For JSON API
 @csrf_exempt
 def snippet_api(request, pk):
     try:
@@ -55,7 +54,9 @@ def snippet_api(request, pk):
         serializer = SnippetSerializer(snippet, data=data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data)
+            print(serializer.data)
+            print(JsonResponse(serializer.data))
+            return JsonResponse(serializer.data, status=200)
         return JsonResponse(serializer.errors, status=400)
 
 # /snippet/{pk} - For HTML

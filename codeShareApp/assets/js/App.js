@@ -5,7 +5,7 @@ import brace from 'brace';
 import 'brace/mode/java';
 import 'brace/theme/github';
 
-//let url = 'http://127.0.0.1:8000/snippet/api/';
+let url = 'http://127.0.0.1:8000/snippet/api/';
 
 const modes = [
   'java',
@@ -53,7 +53,7 @@ export default class App extends React.Component {
 
     /*
     componentDidMount(){
-        // For load()
+        // For load() NOT ADJUSTED TO VAR CHANGE
         fetch(apiUrl)
             .then(response => response.json())
             .then(parsedData => {
@@ -93,7 +93,7 @@ export default class App extends React.Component {
     // Not done yet
     setTitle(e){
         this.setState({
-            title: e.target.value;
+            title: e.target.value
         });
     }
 
@@ -107,25 +107,30 @@ export default class App extends React.Component {
         console.log('Saving..');
         var jsonPut = JSON.stringify({
             id : this.state.id,
-            dateCreated : this.dateCreated,
             title : this.state.title,
-            value : this.state.value,
+            is_private : this.state.isPrivate,
+            code : this.state.value,
+            font_size : this.state.fontSize,
             language : this.state.mode,
             theme : this.state.theme,
-            highlightActiveLine : this.state.highlightActiveLine,
-            showPrintMargin : this.state.showPrintMargin,
-            showGutter : this.state.showGutter,
-            tabSize : this.state.tabSize,
-            showLineNumbers : this.state.showLineNumbers,
-            enableBasicAutocomplete : this.state.enableBasicAutocomplete,
-            enableLiveAutocomplete : this.state.enableLiveAutocomplete,
+            highlight_active_line : this.state.highlightActiveLine,
+            show_print_margin : this.state.showPrintMargin,
+            show_gutter : this.state.showGutter,
+            tab_size : this.state.tabSize,
+            show_line_numbers : this.state.showLineNumbers,
+            enable_basic_autocomplete : this.state.enableBasicAutocomplete,
+            enable_live_autocomplete : this.state.enableLiveAutocomplete,
         });
 
-        let apiUrl = url.concat(this.state.id);
+        console.log(jsonPut);
+        var apiUrl = url.concat(this.state.id,'/');
+
+        console.log(apiUrl);
         fetch(apiUrl, {
             method: 'PUT',
             body: jsonPut
-        }).then(response => response.json().then(json => console.log(json)))
+        }).then(response => console.log(response))
+        //.json().then(json => console.log(json)))
     }
 
     constructor(props){
@@ -135,7 +140,9 @@ export default class App extends React.Component {
             id : jsonObject.id,
             dateCreated : jsonObject.date_created,
             title : jsonObject.title,
+            isPrivate : jsonObject.is_private,
             value : jsonObject.code,
+            fontSize : jsonObject.font_size,
             mode : jsonObject.language,
             theme : jsonObject.theme,
             highlightActiveLine : jsonObject.highlight_active_line,
@@ -173,8 +180,8 @@ export default class App extends React.Component {
                  </label>
                    <p className="control">
                      <span  className="select">
-                       <select name="Theme" onChange={this.setTheme} value={this.state.theme}>
-                        {themes.map((theme) => <option key={theme} value={theme}>{theme}</option>)}
+                       <select name="Mode" onChange={this.setMode} value={this.state.mode}>
+                        {modes.map((mode) => <option key={mode} value={mode}>{mode}</option>)}
                        </select></span>
                    </p>
                </div>
