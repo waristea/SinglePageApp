@@ -4,7 +4,7 @@ User can edit, share, and save their code snippets with this Web SPA.
 
 Tools used : 
 - Django (backend)
-- ReactJS (JS frontend) with its dependencies
+- ReactJS + Bootstrap (frontend)
 - react-ace (web-editor library)
 
 ## Checklist
@@ -22,10 +22,7 @@ Tools used :
 - [x] Model implementation
 - [x] API implementation
 - [x] View implementation
-- [ ] JS implementation
+- [x] JS implementation
 - [ ] Look implementation
 ### D. Testing
-- [ ] API Testing
-- [ ] View Testing
-- [ ] JS and Look Testing
-- [ ] Debugging
+- [x] Backend Testing
