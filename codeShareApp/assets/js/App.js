@@ -6,7 +6,7 @@ import 'brace/mode/java';
 import 'brace/theme/github';
 import 'brace/ext/language_tools';
 import 'brace/ext/searchbox';
-import { Button } from 'react-bootstrap';
+import { Button, ButtonToolbar, ButtonGroup, Glyphicon, Navbar, Panel, DropdownButton, MenuItem} from 'react-bootstrap';
 
 let url = 'http://127.0.0.1:8000/snippet/api/';
 
@@ -31,33 +31,6 @@ themes.forEach((theme) => {
 })
 
 export default class App extends React.Component {
-
-    /*
-    componentDidMount(){
-        // For load() NOT ADJUSTED TO VAR CHANGE
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(parsedData => {
-                this.setState({
-                    id : parsedData.id,
-                    dateCreated : parsedData.date_created,
-                    title : parsedData.title,
-                    value : parsedData.code,
-                    mode : parsedData.language,
-                    theme : parsedData.theme,
-                    highlightActiveLine : parsedData.highlight_active_line,
-                    showPrintMargin : parsedData.show_print_margin,
-                    showGutter : parsedData.show_gutter,
-                    tabSize : parsedData.tab_size,
-                    showLineNumbers : parsedData.show_line_numbers,
-                    enableBasicAutocomplete : parsedData.enable_basic_autocomplete,
-                    enableLiveAutocomplete : parsedData.enable_live_autocomplete,
-                });
-	        });
-
-    }
-    */
-
     codeOnChange(newValue) {
         this.setState({
             value : newValue
@@ -65,32 +38,34 @@ export default class App extends React.Component {
         //console.log('change',newValue);
     }
 
-    setTheme(e) {
+    setTheme(val) {
         this.setState({
-            theme: e.target.value
+            theme: val
         })
+    }
+
+    setEditTitle(e){
+        this.setState({
+            titleEdit: !this.state.titleEdit,
+        });
     }
 
     setTitle(e){
         this.setState({
             title: e.target.value
         });
+        this.props.edit_callback(e.target.value);
     }
 
-    setMode(e) {
+    setMode(val) {
         this.setState({
-            mode: e.target.value
+            mode: val
         })
     }
 
-    setBoolean(name, value) {
+    setFontSize(val) {
         this.setState({
-          [name]: value
-        })
-    }
-    setFontSize(e) {
-        this.setState({
-          fontSize: parseInt(e.target.value,10)
+          fontSize: val
         })
     }
 
@@ -143,140 +118,95 @@ export default class App extends React.Component {
             showLineNumbers : jsonObject.linenos,
             enableBasicAutocomplete : jsonObject.enable_basic_autocomplete,
             enableLiveAutocomplete : jsonObject.enable_live_autocomplete,
+            menuOpen : false,
+            titleEdit : false
         };
         this.save = this.save.bind(this);
+        this.setEditTitle = this.setEditTitle.bind(this);
         this.setTitle = this.setTitle.bind(this);
         this.setTheme = this.setTheme.bind(this);
         this.setMode = this.setMode.bind(this);
         this.codeOnChange = this.codeOnChange.bind(this);
         this.setFontSize = this.setFontSize.bind(this);
-        this.setBoolean = this.setBoolean.bind(this);
     }
-
     // Render editor
     render(){
+        // For title edit on click
+        let titleSection = null;
+        if(this.state.titleEdit){
+            titleSection =
+            <div>
+                <input style="font-size:24px" type="text" id="inputTitle" value={this.state.title} autoFocus onChange={this.setTitle} onBlur={(e) => this.setEditTitle(e)}></input>;
+                <Button onClick={this.setEditTitle}><Glyphicon glyph="pencil" /></Button>
+                <Button onClick={this.save}><Glyphicon glyph="floppy-disk" /></Button>
+            </div>
+        }
+        else{
+            titleSection =
+            <h2 id="titleSection" onClick={(e) => this.setEditTitle(e)}>
+                {this.state.title}
+                <Button onClick={this.setEditTitle}><Glyphicon glyph="pencil" /></Button>
+                <Button onClick={this.save}><Glyphicon glyph="floppy-disk" /></Button>
+            </h2>;
+        }
+
         return(
             <div>
+                {/*<Navbar />*/}
                 {/* Title */}
-                <div className="titleContainer">
-                    <div className="titleText">
-                        {this.state.title}
-                        <Button onClick={this.setTitle}>
-                            Edit
-                        </Button>
-                    </div>
+                <div className="Header">
+                    {titleSection}
+                    <Button onClick={ ()=> this.setState({ menuOpen: !this.state.menuOpen })}>
+                      Option
+                    </Button>
                 </div>
+                <Panel collapsible expanded={this.state.menuOpen}>
+                    <ButtonToolbar>
+                        <ButtonGroup>
+                            {/* Mode */}
+                            <DropdownButton title="Mode" id="mode-dropdown">
+                                {modes.map((mode) => <MenuItem eventKey={mode} key={mode} value={mode} onSelect={() => this.setMode(mode)}>{mode}</MenuItem>)}
+                            </DropdownButton>
 
-                {/* Mode */}
-                <div className="field">
-                    <label>
-                        Mode:
-                    </label>
-                    <p className="control">
-                        <span  className="select">
-                            <select name="Mode" onChange={this.setMode} value={this.state.mode}>
-                            {modes.map((mode) => <option key={mode} value={mode}>{mode}</option>)}
-                            </select>
-                        </span>
-                    </p>
-                </div>
+                            {/* Theme */}
+                            <DropdownButton title="Theme" id="theme-dropdown" >
+                                {themes.map((theme) => <MenuItem eventKey={theme} key={theme} value={theme} onSelect={() => this.setTheme(theme)}>{theme}</MenuItem>)}
+                            </DropdownButton>
 
-                {/* Theme */}
-                <div className="field">
-                    <label>
-                       Theme:
-                    </label>
-                    <p className="control">
-                        <span  className="select">
-                            <select name="Theme" onChange={this.setTheme} value={this.state.theme}>
-                            {themes.map((lang) => <option key={lang} value={lang}>{lang}</option>)}
-                            </select>
-                        </span>
-                    </p>
-                </div>
-
-                {/* Font Size*/}
-                <div className="field">
-                    <label>
-                       Font Size:
-                    </label>
-                    <p className="control">
-                        <span  className="select">
-                        <select name="Font Size" onChange={this.setFontSize} value={this.state.fontSize}>
-                            {[14,16,18,20,24,28,32,40].map((lang) => <option  key={lang} value={lang}>{lang}</option>)}
-                        </select>
-                        </span>
-                    </p>
-                </div>
-
-                {/* Checkboxes */}
-                {/* Enable Basic Auto Complete */}
-                <div className="field">
-                    <p className="control">
-                        <label className="checkbox">
-                            <input type="checkbox" checked={this.state.enableBasicAutocomplete} onChange={(e) => this.setBoolean('enableBasicAutocomplete', e.target.checked)} />
-                            Enable Basic Autocomplete
-                        </label>
-                    </p>
-                </div>
-                {/* Enable Live Auto Complete */}
-                <div className="field">
-                    <p className="control">
-                        <label className="checkbox">
-                            <input type="checkbox" checked={this.state.enableLiveAutocomplete} onChange={(e) => this.setBoolean('enableLiveAutocomplete', e.target.checked)} />
-                            Enable Live Autocomplete
-                        </label>
-                    </p>
-                </div>
-                {/* Show Gutter */}
-                <div className="field">
-                    <p className="control">
-                        <label className="checkbox">
-                            <input type="checkbox" checked={this.state.showGutter} onChange={(e) => this.setBoolean('showGutter', e.target.checked)} />
-                            Show Gutter
-                        </label>
-                    </p>
-                </div>
-                {/* Show Print Margin */}
-                <div className="field">
-                    <p className="control">
-                        <label className="checkbox">
-                            <input type="checkbox" checked={this.state.showPrintMargin} onChange={(e) => this.setBoolean('showPrintMargin', e.target.checked)} />
-                             Show Print Margin
-                        </label>
-                    </p>
-                </div>
-                {/* Highligh Active Line */}
-                <div className="field">
-                    <p className="control">
-                        <label className="checkbox">
-                            <input type="checkbox" checked={this.state.highlightActiveLine} onChange={(e) => this.setBoolean('highlightActiveLine', e.target.checked)} />
-                            Highlight Active Line
-                        </label>
-                    </p>
-                </div>
-                {/* Show Line Numbers */}
-                <div className="field">
-                    <p className="control">
-                        <label className="checkbox">
-                            <input type="checkbox" checked={this.state.showLineNumbers} onChange={(e) => this.setBoolean('showLineNumbers', e.target.checked)} />
-                            Show Line Numbers
-                        </label>
-                    </p>
-                </div>
-
-
-                <Button onClick={this.save}> Save </Button>
+                            {/* Font Size*/}
+                            <DropdownButton title="Font Size" id="font-size-dropdown">
+                                {[14,16,18,20,24,28,32,40].map((elm) => <MenuItem eventKey={elm} key={elm} value={elm} onSelect={() => this.setFontSize(elm)}>{elm}</MenuItem>)}
+                            </DropdownButton>
+                        </ButtonGroup>
+                        {/* Checkboxes */}
+                        <ButtonGroup>
+                            {/* Enable Live Auto Complete */}
+                            <Button active={this.state.enableLiveAutocomplete} onClick={ ()=> this.setState({ enableLiveAutocomplete: !this.state.enableLiveAutocomplete })}>
+                              Autocompletion
+                            </Button>
+                            {/* Show Gutter */}
+                            <Button active={this.state.showGutter} onClick={ ()=> this.setState({ showGutter: !this.state.showGutter })}>
+                              Show Gutter
+                            </Button>
+                            {/* Highlight Active Line */}
+                            <Button active={this.state.highlightActiveLine} onClick={ ()=> this.setState({ highlightActiveLine: !this.state.highlightActiveLine })}>
+                              Highlight Active Line
+                            </Button>
+                            {/* Show Line Numbers */}
+                            <Button active={this.state.showLineNumbers} onClick={ ()=> this.setState({ showLineNumbers: !this.state.showLineNumbers })}>
+                              Line Numbers
+                            </Button>
+                        </ButtonGroup>
+                    </ButtonToolbar>
+                </Panel>
                 <AceEditor
                     value={this.state.value}
                     mode={this.state.mode}
                     theme={this.state.theme}
                     fontSize={this.state.fontSize}
                     showPrintMargin={this.state.showPrintMargin}
-                    showGutter={this.state.show_gutter}
+                    showGutter={this.state.showGutter}
                     highlightActiveLine={this.state.highlightActiveLine}
-
-                    onChange={this.codeOnChange.bind(this)}
                     name={this.state.title}
 
                     setOptions={{

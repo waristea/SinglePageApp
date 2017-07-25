@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4af1689-ac4d-4f98-8ef6-46413ccb9793" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeShareApp/codeShareApp/settings.py.save" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeShareApp/snippets/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeShareApp/users/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeShareApp/users/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeShareApp/users/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeShareApp/users/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeShareApp/users/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeShareApp/users/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeShareApp/users/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeShareApp/users/views.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/db.sqlite3" afterPath="$PROJECT_DIR$/codeShareApp/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/assets/bundles/main.js" afterPath="$PROJECT_DIR$/codeShareApp/assets/bundles/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/assets/js/App.js" afterPath="$PROJECT_DIR$/codeShareApp/assets/js/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/codeShareApp/settings.py" afterPath="$PROJECT_DIR$/codeShareApp/codeShareApp/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/snippets/urls.py" afterPath="$PROJECT_DIR$/codeShareApp/snippets/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/snippets/views.py" afterPath="$PROJECT_DIR$/codeShareApp/snippets/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/templates/index.html" afterPath="$PROJECT_DIR$/codeShareApp/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/webpack.config.js" afterPath="$PROJECT_DIR$/codeShareApp/webpack.config.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,46 +19,42 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_snippets_requests.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/codeShareApp/snippets/tests/test_snippets_requests.py">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/codeShareApp/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/codeShareApp/codeShareApp/settings.py">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/codeShareApp/assets/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/codeShareApp/assets/js/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="154" column="32" lean-forward="false" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/codeShareApp/assets/js/App.js">
+        <entry file="file://$PROJECT_DIR$/../singlePageApp - Copy/codeShareApp/assets/js/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1839">
-              <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+            <state relative-caret-position="-2363">
+              <caret line="74" column="33" lean-forward="true" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/codeShareApp/snippets/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-307">
-              <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -96,11 +81,30 @@
       <find>default</find>
       <find>conten</find>
       <find>&lt;</find>
+      <find>Theme</find>
+      <find>--&gt;</find>
+      <find>C</find>
+      <find>Co</find>
+      <find>Com</find>
+      <find>Comp</find>
+      <find>Compl</find>
+      <find>Comple</find>
+      <find>Completeion</find>
+      <find>Completeio</find>
+      <find>Completei</find>
+      <find>Complete</find>
+      <find>Complet</find>
+      <find>completion</find>
+      <find>completio</find>
+      <find>complete</find>
+      <find>console</find>
+      <find>setTitle</find>
     </findStrings>
     <replaceStrings>
       <replace>parsedData</replace>
       <replace>,</replace>
       <replace>assigned</replace>
+      <replace>*/}</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\William\Desktop\werk\singlePageApp</dir>
@@ -122,17 +126,19 @@
         <option value="$PROJECT_DIR$/codeShareApp/snippets/serializers.py" />
         <option value="$PROJECT_DIR$/codeShareApp/codeShareApp/urls.py" />
         <option value="$PROJECT_DIR$/codeShareApp/snippets/models.py" />
-        <option value="$PROJECT_DIR$/codeShareApp/assets/js/index.js" />
-        <option value="$PROJECT_DIR$/codeShareApp/templates/index.html" />
         <option value="$PROJECT_DIR$/codeShareApp/snippets/tests.py" />
         <option value="$PROJECT_DIR$/codeShareApp/snippets/tests/test_snippets_request.py" />
         <option value="$PROJECT_DIR$/codeShareApp/codeShareApp/settings.py.save" />
         <option value="$PROJECT_DIR$/codeShareApp/snippets/tests/test_snippets_models.py" />
         <option value="$PROJECT_DIR$/codeShareApp/snippets/urls.py" />
-        <option value="$PROJECT_DIR$/codeShareApp/assets/js/App.js" />
         <option value="$PROJECT_DIR$/codeShareApp/codeShareApp/settings.py" />
         <option value="$PROJECT_DIR$/codeShareApp/snippets/tests/test_snippets_requests.py" />
         <option value="$PROJECT_DIR$/codeShareApp/snippets/views.py" />
+        <option value="$PROJECT_DIR$/codeShareApp/assets/css/Checkbox.css" />
+        <option value="$PROJECT_DIR$/codeShareApp/assets/components/Checkbox/Checkbox.js" />
+        <option value="$PROJECT_DIR$/codeShareApp/assets/js/index.js" />
+        <option value="$PROJECT_DIR$/codeShareApp/templates/index.html" />
+        <option value="$PROJECT_DIR$/codeShareApp/assets/js/App.js" />
       </list>
     </option>
   </component>
@@ -159,7 +165,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -201,7 +206,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="snippets" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -219,26 +224,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="singlePageApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="singlePageApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="codeShareApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Self Study/Web Development/Django/django-reactJS-libs/lnpoint" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../singlePageApp - Copy/codeShareApp/assets/js/App.js" />
     <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Study\Workbench\singlePageApp\codeShareApp\assets" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Study\Workbench\singlePageApp\codeShareApp\assets" />
       <recent name="C:\Users\William\Desktop\werk\singlePageApp\codeShareApp" />
       <recent name="C:\Users\William\Desktop\werk\singlePageApp\codeShareApp\snippets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Study\Workbench\singlePageApp\codeShareApp\assets\components\Checkbox" />
+      <recent name="D:\Study\Workbench\singlePageApp\codeShareApp\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -334,6 +367,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="673" y="0" width="694" height="765" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.648265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -342,7 +376,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23417722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -365,22 +399,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/codeShareApp/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeShareApp/assets/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeShareApp/assets/js/App.js" />
     <entry file="file://$PROJECT_DIR$/codeShareApp/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -519,20 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/codeShareApp/assets/bundles/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="18064" column="49" lean-forward="false" selection-start-line="18064" selection-start-column="45" selection-end-line="18064" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeShareApp/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="67" lean-forward="false" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/codeShareApp/snippets/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -549,27 +553,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/codeShareApp/assets/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/codeShareApp/codeShareApp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeShareApp/snippets/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="47" column="55" lean-forward="true" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -577,33 +564,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="7" column="51" lean-forward="false" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeShareApp/assets/js/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1839">
-          <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/codeShareApp/codeShareApp/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/codeShareApp/snippets/tests/test_snippets_requests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
+        <state relative-caret-position="765">
           <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -611,9 +585,68 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-307">
           <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeShareApp/snippets/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="55" lean-forward="false" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeShareApp/assets/bundles/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="18064" column="49" lean-forward="false" selection-start-line="18064" selection-start-column="45" selection-end-line="18064" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeShareApp/assets/components/Checkbox/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeShareApp/assets/components/Checkbox/Checkbox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../singlePageApp - Copy/codeShareApp/assets/js/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2363">
+          <caret line="74" column="33" lean-forward="true" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeShareApp/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeShareApp/assets/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeShareApp/assets/js/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="154" column="32" lean-forward="false" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

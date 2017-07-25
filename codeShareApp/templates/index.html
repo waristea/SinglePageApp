@@ -1,10 +1,11 @@
 {% load render_bundle from webpack_loader %}
-<!--{% load static from staticfiles %}-->
+{% load static from staticfiles %}
 <html>
     <head>
-        <title>Hello React</title>
+        <title>React Snippet</title>
     </head>
     <body>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <div id="container" data-json-string="{{json_data}}"></div>
         {% render_bundle 'main' %}
     </body>
