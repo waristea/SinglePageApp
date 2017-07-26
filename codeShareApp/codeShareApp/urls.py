@@ -1,9 +1,7 @@
-
 from django.conf.urls import include, url
-from django.contrib import admin
-from django.views.generic import TemplateView
+from snippets.views import snippet_new
 
 urlpatterns = [
     url(r'^snippet/', include('snippets.urls')), # Accessing individial snippets
-    url(r'^/', include('snippets.urls')),  # Make new snippet
+    url(r'^$', snippet_new),  # Make new snippet
 ]

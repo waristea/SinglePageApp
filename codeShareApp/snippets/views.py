@@ -1,5 +1,4 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
@@ -27,11 +26,8 @@ def snippet_new(request):
     snippet = Snippet()
     snippet.save()
     serializer = SnippetSerializer(snippet)
-    json_data = JSONRenderer().render(serializer.data)
-    context = {
-        'json_data' : json_data
-    }
-    return render(request, 'index.html', context)
+    print(snippet.id)
+    return redirect('snippet-detail', pk=snippet.id)
 
 # /snippet/api/{pk} - For JSON API
 @csrf_exempt

@@ -4,12 +4,9 @@
     <list default="true" id="b4af1689-ac4d-4f98-8ef6-46413ccb9793" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/db.sqlite3" afterPath="$PROJECT_DIR$/codeShareApp/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/assets/bundles/main.js" afterPath="$PROJECT_DIR$/codeShareApp/assets/bundles/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/assets/js/App.js" afterPath="$PROJECT_DIR$/codeShareApp/assets/js/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/codeShareApp/settings.py" afterPath="$PROJECT_DIR$/codeShareApp/codeShareApp/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/codeShareApp/urls.py" afterPath="$PROJECT_DIR$/codeShareApp/codeShareApp/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/snippets/urls.py" afterPath="$PROJECT_DIR$/codeShareApp/snippets/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/snippets/views.py" afterPath="$PROJECT_DIR$/codeShareApp/snippets/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeShareApp/templates/index.html" afterPath="$PROJECT_DIR$/codeShareApp/templates/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,29 +18,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/codeShareApp/snippets/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/codeShareApp/snippets/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/codeShareApp/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -149,7 +124,6 @@
         <option value="$PROJECT_DIR$/codeShareApp/assets/bundles/main.js" />
         <option value="$PROJECT_DIR$/codeShareApp/assets/js/app.js" />
         <option value="$PROJECT_DIR$/codeShareApp/snippets/serializers.py" />
-        <option value="$PROJECT_DIR$/codeShareApp/codeShareApp/urls.py" />
         <option value="$PROJECT_DIR$/codeShareApp/snippets/models.py" />
         <option value="$PROJECT_DIR$/codeShareApp/snippets/tests.py" />
         <option value="$PROJECT_DIR$/codeShareApp/snippets/tests/test_snippets_request.py" />
@@ -160,10 +134,11 @@
         <option value="$PROJECT_DIR$/codeShareApp/assets/components/Checkbox/Checkbox.js" />
         <option value="$PROJECT_DIR$/codeShareApp/assets/js/index.js" />
         <option value="$PROJECT_DIR$/codeShareApp/assets/js/App.js" />
-        <option value="$PROJECT_DIR$/codeShareApp/snippets/views.py" />
         <option value="$PROJECT_DIR$/codeShareApp/templates/index.html" />
         <option value="$PROJECT_DIR$/codeShareApp/codeShareApp/settings.py" />
         <option value="$PROJECT_DIR$/codeShareApp/snippets/urls.py" />
+        <option value="$PROJECT_DIR$/codeShareApp/snippets/views.py" />
+        <option value="$PROJECT_DIR$/codeShareApp/codeShareApp/urls.py" />
       </list>
     </option>
   </component>
@@ -415,7 +390,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2420886" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24050634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -609,6 +584,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/codeShareApp/assets/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeShareApp/codeShareApp/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="23" lean-forward="true" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/codeShareApp/snippets/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
@@ -633,11 +624,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/codeShareApp/codeShareApp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/codeShareApp/snippets/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="35" column="29" lean-forward="false" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeShareApp/snippets/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="70" lean-forward="false" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -646,40 +659,6 @@
         <state relative-caret-position="119">
           <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeShareApp/assets/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeShareApp/codeShareApp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeShareApp/codeShareApp/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="23" lean-forward="true" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeShareApp/snippets/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
