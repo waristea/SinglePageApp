@@ -7,7 +7,7 @@ import 'brace/theme/github';
 import 'brace/ext/language_tools';
 import 'brace/ext/searchbox';
 import { Button, ButtonToolbar, ButtonGroup, Col, Glyphicon, Grid, Navbar,
-Panel, DropdownButton, MenuItem, Row} from 'react-bootstrap';
+Panel, DropdownButton, MenuItem, Row, Tooltip, Overlay} from 'react-bootstrap';
 
 let url = 'http://127.0.0.1:8000/snippet/api/';
 let urlHtml = 'http://127.0.0.1:8000/snippet/'
@@ -71,14 +71,27 @@ export default class App extends React.Component {
         })
     }
 
+    setToggleSave(){
+        this.setState({
+            showToggleSave: !this.state.showToggleSave
+        });
+    }
+
+    setToggleCopy(){
+        this.setState({
+            showToggleCopy: !this.state.showToggleCopy
+        });
+    }
+
     copyLink() {
         var Url = urlHtml.concat(this.state.id,'/');
-        var textField = document.createElement('textarea')
-        textField.innerText = Url
-        document.body.appendChild(textField)
-        textField.select()
-        document.execCommand('copy')
-        textField.remove()
+        var textField = document.createElement('textarea');
+        textField.innerText = Url;
+        document.body.appendChild(textField);
+        textField.select();
+        document.execCommand('copy');
+        textField.remove();
+        this.setToggleCopy();
     }
 
     save(){
@@ -104,7 +117,12 @@ export default class App extends React.Component {
         fetch(apiUrl, {
             method: 'PUT',
             body: jsonPut
-        }).then(response => console.log(response))
+        }).then(response => {
+            this.setToggleSave();
+            console.log(response);
+        }).catch(function(error) {
+            console.log(error);
+        });
         //.json().then(json => console.log(json)))
     }
 
@@ -128,6 +146,8 @@ export default class App extends React.Component {
             enableBasicAutocomplete : jsonObject.enable_basic_autocomplete,
             enableLiveAutocomplete : jsonObject.enable_live_autocomplete,
             menuOpen : false,
+            showToggleSave : false,
+            showToggleCopy : false,
             titleEdit : false
         };
         this.save = this.save.bind(this);
@@ -138,6 +158,8 @@ export default class App extends React.Component {
         this.codeOnChange = this.codeOnChange.bind(this);
         this.setFontSize = this.setFontSize.bind(this);
         this.copyLink = this.copyLink.bind(this);
+        this.setToggleCopy = this.setToggleCopy.bind(this);
+        this.setToggleSave = this.setToggleSave.bind(this);
     }
     // Render editor
     render(){
@@ -148,28 +170,33 @@ export default class App extends React.Component {
             <div>
                 <input type="text" id="inputTitle" value={this.state.title} autoFocus onChange={this.setTitle} onBlur={(e) => this.setEditTitle(e)}></input>
                 <br />
-                <Button onClick={this.setEditTitle}><Glyphicon glyph="pencil" /></Button>
-                <Button onClick={this.save}><Glyphicon glyph="floppy-disk" /></Button>
-                <Button onClick={this.copyLink}><Glyphicon glyph="link" /></Button>
-                <Button onClick={ ()=> this.setState({ menuOpen: !this.state.menuOpen })}>Option</Button>
             </div>
         }
         else{
             titleSection =
             <h2>
                 <div id="titleSection" onClick={(e) => this.setEditTitle(e)}>{this.state.title}</div>
-                <Button onClick={this.setEditTitle}><Glyphicon glyph="pencil" /></Button>
-                <Button onClick={this.save}><Glyphicon glyph="floppy-disk" /></Button>
-                <Button onClick={this.copyLink}><Glyphicon glyph="link" /></Button>
-                <Button onClick={ ()=> this.setState({ menuOpen: !this.state.menuOpen })}>Option</Button>
             </h2>
         }
 
         return(
             <div>
+                <Overlay show={this.state.showToggleSave} container={this} target={() => ReactDOM.findDOMNode(this.refs.target)} rootClose={true} onHide={()=>this.setToggleSave()} placement="bottom">
+                  <Tooltip id="overload-bottom">Saved</Tooltip>
+                </Overlay>
+                <Overlay show={this.state.showToggleCopy} container={this} target={() => ReactDOM.findDOMNode(this.refs.target)} rootClose={true} onHide={()=>this.setToggleCopy()} placement="bottom">
+                  <Tooltip id="overload-bottom">Link Copied</Tooltip>
+                </Overlay>
+
                 {/* Title */}
                 <div className="Header">
                     {titleSection}
+
+                    <Button onClick={this.setEditTitle}><Glyphicon glyph="pencil" /></Button>
+                    <Button onClick={this.save}><Glyphicon glyph="floppy-disk" /></Button>
+                    <Button onClick={this.copyLink}><Glyphicon glyph="link" /></Button>
+                    <Button onClick={ ()=> this.setState({ menuOpen: !this.state.menuOpen })}>Option</Button>
+
                 </div>
                 <Panel collapsible expanded={this.state.menuOpen}>
                     <ButtonToolbar>
