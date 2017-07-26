@@ -17,12 +17,12 @@ Tools used :
 - [x] API design
 - [x] View design
 - [x] JS design
-- [ ] Look design
+- [x] Look design
 ### C. Implementation
 - [x] Model implementation
 - [x] API implementation
 - [x] View implementation
 - [x] JS implementation
-- [ ] Look implementation
+- [x] Look implementation
 ### D. Testing
 - [x] Backend Testing
