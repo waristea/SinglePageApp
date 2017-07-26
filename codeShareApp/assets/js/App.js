@@ -6,9 +6,11 @@ import 'brace/mode/java';
 import 'brace/theme/github';
 import 'brace/ext/language_tools';
 import 'brace/ext/searchbox';
-import { Button, ButtonToolbar, ButtonGroup, Glyphicon, Navbar, Panel, DropdownButton, MenuItem} from 'react-bootstrap';
+import { Button, ButtonToolbar, ButtonGroup, Col, Glyphicon, Grid, Navbar,
+Panel, DropdownButton, MenuItem, Row} from 'react-bootstrap';
 
 let url = 'http://127.0.0.1:8000/snippet/api/';
+let urlHtml = 'http://127.0.0.1:8000/snippet/'
 
 const modes = [
   'java','javascript','python','xml','ruby','sass','markdown','mysql',
@@ -69,6 +71,16 @@ export default class App extends React.Component {
         })
     }
 
+    copyLink() {
+        var Url = urlHtml.concat(this.state.id,'/');
+        var textField = document.createElement('textarea')
+        textField.innerText = Url
+        document.body.appendChild(textField)
+        textField.select()
+        document.execCommand('copy')
+        textField.remove()
+    }
+
     save(){
         console.log('Saving..');
         var jsonPut = JSON.stringify({
@@ -87,11 +99,8 @@ export default class App extends React.Component {
             enable_basic_autocomplete : this.state.enableBasicAutocomplete,
             enable_live_autocomplete : this.state.enableLiveAutocomplete,
         });
-        console.log(this.state.value);
-        console.log(jsonPut);
         var apiUrl = url.concat(this.state.id,'/');
 
-        console.log(apiUrl);
         fetch(apiUrl, {
             method: 'PUT',
             body: jsonPut
@@ -128,6 +137,7 @@ export default class App extends React.Component {
         this.setMode = this.setMode.bind(this);
         this.codeOnChange = this.codeOnChange.bind(this);
         this.setFontSize = this.setFontSize.bind(this);
+        this.copyLink = this.copyLink.bind(this);
     }
     // Render editor
     render(){
@@ -136,40 +146,41 @@ export default class App extends React.Component {
         if(this.state.titleEdit){
             titleSection =
             <div>
-                <input type="text" id="inputTitle" value={this.state.title} autoFocus onChange={this.setTitle} onBlur={(e) => this.setEditTitle(e)}></input>;
+                <input type="text" id="inputTitle" value={this.state.title} autoFocus onChange={this.setTitle} onBlur={(e) => this.setEditTitle(e)}></input>
+                <br />
                 <Button onClick={this.setEditTitle}><Glyphicon glyph="pencil" /></Button>
                 <Button onClick={this.save}><Glyphicon glyph="floppy-disk" /></Button>
+                <Button onClick={this.copyLink}><Glyphicon glyph="link" /></Button>
+                <Button onClick={ ()=> this.setState({ menuOpen: !this.state.menuOpen })}>Option</Button>
             </div>
         }
         else{
             titleSection =
-            <div>
-                <h2 id="titleSection" onClick={(e) => this.setEditTitle(e)}>{this.state.title}</h2>
+            <h2>
+                <div id="titleSection" onClick={(e) => this.setEditTitle(e)}>{this.state.title}</div>
                 <Button onClick={this.setEditTitle}><Glyphicon glyph="pencil" /></Button>
                 <Button onClick={this.save}><Glyphicon glyph="floppy-disk" /></Button>
-            </div>
+                <Button onClick={this.copyLink}><Glyphicon glyph="link" /></Button>
+                <Button onClick={ ()=> this.setState({ menuOpen: !this.state.menuOpen })}>Option</Button>
+            </h2>
         }
 
         return(
             <div>
-                {/*<Navbar />*/}
                 {/* Title */}
                 <div className="Header">
                     {titleSection}
-                    <Button onClick={ ()=> this.setState({ menuOpen: !this.state.menuOpen })}>
-                      Option
-                    </Button>
                 </div>
                 <Panel collapsible expanded={this.state.menuOpen}>
                     <ButtonToolbar>
                         <ButtonGroup>
                             {/* Mode */}
-                            <DropdownButton title="Mode" id="mode-dropdown">
+                            <DropdownButton title={this.state.mode} id="mode-dropdown">
                                 {modes.map((mode) => <MenuItem eventKey={mode} key={mode} value={mode} onSelect={() => this.setMode(mode)}>{mode}</MenuItem>)}
                             </DropdownButton>
 
                             {/* Theme */}
-                            <DropdownButton title="Theme" id="theme-dropdown" >
+                            <DropdownButton title={this.state.theme} id="theme-dropdown" >
                                 {themes.map((theme) => <MenuItem eventKey={theme} key={theme} value={theme} onSelect={() => this.setTheme(theme)}>{theme}</MenuItem>)}
                             </DropdownButton>
 
@@ -208,7 +219,9 @@ export default class App extends React.Component {
                     showGutter={this.state.showGutter}
                     highlightActiveLine={this.state.highlightActiveLine}
                     name={this.state.title}
-
+                    height="100%"
+                    width="100%"
+                    editorProps={{$blockScrolling: Infinity}}
                     onChange={this.codeOnChange}
 
                     setOptions={{
