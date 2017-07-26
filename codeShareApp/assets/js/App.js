@@ -35,7 +35,7 @@ export default class App extends React.Component {
         this.setState({
             value : newValue
         });
-        //console.log('change',newValue);
+        console.log('change',newValue);
     }
 
     setTheme(val) {
@@ -87,7 +87,7 @@ export default class App extends React.Component {
             enable_basic_autocomplete : this.state.enableBasicAutocomplete,
             enable_live_autocomplete : this.state.enableLiveAutocomplete,
         });
-
+        console.log(this.state.value);
         console.log(jsonPut);
         var apiUrl = url.concat(this.state.id,'/');
 
@@ -136,18 +136,18 @@ export default class App extends React.Component {
         if(this.state.titleEdit){
             titleSection =
             <div>
-                <input style="font-size:24px" type="text" id="inputTitle" value={this.state.title} autoFocus onChange={this.setTitle} onBlur={(e) => this.setEditTitle(e)}></input>;
+                <input type="text" id="inputTitle" value={this.state.title} autoFocus onChange={this.setTitle} onBlur={(e) => this.setEditTitle(e)}></input>;
                 <Button onClick={this.setEditTitle}><Glyphicon glyph="pencil" /></Button>
                 <Button onClick={this.save}><Glyphicon glyph="floppy-disk" /></Button>
             </div>
         }
         else{
             titleSection =
-            <h2 id="titleSection" onClick={(e) => this.setEditTitle(e)}>
-                {this.state.title}
+            <div>
+                <h2 id="titleSection" onClick={(e) => this.setEditTitle(e)}>{this.state.title}</h2>
                 <Button onClick={this.setEditTitle}><Glyphicon glyph="pencil" /></Button>
                 <Button onClick={this.save}><Glyphicon glyph="floppy-disk" /></Button>
-            </h2>;
+            </div>
         }
 
         return(
@@ -208,6 +208,8 @@ export default class App extends React.Component {
                     showGutter={this.state.showGutter}
                     highlightActiveLine={this.state.highlightActiveLine}
                     name={this.state.title}
+
+                    onChange={this.codeOnChange}
 
                     setOptions={{
                         enableBasicAutocompletion: this.state.enableBasicAutocomplete,
