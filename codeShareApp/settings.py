@@ -6,7 +6,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 SECRET_KEY = 'x=ub&fs7scl5(j+iyq50wssv74mocvh)k#d$#q=)os^*m^ju7o'
 
-DEBUG = FALSE
+DEBUG = false
 
 ALLOWED_HOSTS = [
     'cryptic-reaches-25567.herokuapp.com',
