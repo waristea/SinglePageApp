@@ -9,8 +9,8 @@ SECRET_KEY = 'x=ub&fs7scl5(j+iyq50wssv74mocvh)k#d$#q=)os^*m^ju7o'
 DEBUG = FALSE
 
 ALLOWED_HOSTS = [
-    'cryptic-reaches-25567.heroku.com',
-    'www.cryptic-reaches-25567.heroku.com',
+    'cryptic-reaches-25567.herokuapp.com',
+    'www.cryptic-reaches-25567.herokuapp.com',
     '127.0.0.1'
 ]
 
