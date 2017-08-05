@@ -1,6 +1,7 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 SECRET_KEY = 'x=ub&fs7scl5(j+iyq50wssv74mocvh)k#d$#q=)os^*m^ju7o'
 
