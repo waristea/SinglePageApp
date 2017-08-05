@@ -56,5 +56,5 @@
   },
   "scripts": {
     "heroku-postbuild": "npm run dist",
-  },
+  }
 }

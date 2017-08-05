@@ -9,8 +9,8 @@ import 'brace/ext/searchbox';
 import { Button, ButtonToolbar, ButtonGroup, Col, Glyphicon, Grid, Navbar,
 Panel, DropdownButton, MenuItem, Row, Tooltip, Overlay} from 'react-bootstrap';
 
-let url = 'http://127.0.0.1:8000/snippet/api/';
-let urlHtml = 'http://127.0.0.1:8000/snippet/'
+let url = 'http://cryptic-reaches-25567.herokuapp.com/snippet/api/';
+let urlHtml = 'http://cryptic-reaches-25567.herokuapp.com/snippet/'
 
 const modes = [
   'java','javascript','python','xml','ruby','sass','markdown','mysql',
