@@ -9,8 +9,9 @@ import 'brace/ext/searchbox';
 import { Button, ButtonToolbar, ButtonGroup, Col, Glyphicon, Grid, Navbar,
 Panel, DropdownButton, MenuItem, Row, Tooltip, Overlay} from 'react-bootstrap';
 
-let url = 'http://cryptic-reaches-25567.herokuapp.com/snippet/api/';
-let urlHtml = 'http://cryptic-reaches-25567.herokuapp.com/snippet/'
+let herokubase = 'https://cryptic-reaches-25567.herokuapp.com/';
+let url = 'https://cryptic-reaches-25567.herokuapp.com/snippet/api/';
+let urlHtml = 'https://cryptic-reaches-25567.herokuapp.com/snippet/'
 
 const modes = [
   'java','javascript','python','xml','ruby','sass','markdown','mysql',
@@ -56,7 +57,6 @@ export default class App extends React.Component {
         this.setState({
             title: e.target.value
         });
-        this.props.edit_callback(e.target.value);
     }
 
     setMode(val) {

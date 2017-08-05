@@ -53,8 +53,5 @@
   "repository": {
     "type": "git",
     "url": "https://www.github.com/waristea/SinglePageApp"
-  },
-  "scripts": {
-    "heroku-postbuild": "npm run dist",
   }
 }
