@@ -8,9 +8,11 @@ gunicorn==19.7.1
 idna==2.5
 npm==0.1.1
 optional-django==0.1.0
+psycopg2==2.6.2
 Pygments==2.2.0
 pytz==2017.2
 requests==2.18.1
 urllib3==1.21.1
 virtualenv==15.1.0
 webpack==6.0.0
+whitenoise==3.2
